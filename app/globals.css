@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Angie Pro';
+  src: url('/fonts/angie-pro.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfaf5;
+  --foreground: #3d3d3d;
+  --card-bg: #ffffff;
+  --accent: #8b7355;
+  --accent-soft: #f4f1e9;
+  --accent-green: #2e5e2e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-card: var(--card-bg);
+  --color-accent-creamy: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-green: var(--accent-green);
+  --font-sans: 'Angie Pro', var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-amiri: var(--font-amiri);
+  --font-noto-arabic: var(--font-noto-arabic);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fbfaf5;
+    --foreground: #3d3d3d;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Angie Pro', Arial, Helvetica, sans-serif;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e8e4d9;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #d1ccbc;
 }
