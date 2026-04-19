@@ -41,12 +41,12 @@ export default function SettingsSidebar() {
 
       {/* Sidebar Content */}
       <div
-        className={`fixed top-0 left-0 h-full w-96 bg-white border-r border-[#f4f1e9] z-[70] transition-transform duration-300 transform ${
+        className={`fixed top-0 left-0 h-full w-96 bg-white border-r border-[#f4f1e9] z-[70] transition-transform duration-300 transform flex flex-col ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="p-8">
-          <div className="flex items-center justify-between mb-10">
+        <div className="p-8 border-b border-[#f4f1e9]">
+          <div className="flex items-center justify-between">
             <h2 className="text-xl font-serif text-[#3d3d3d]">Settings</h2>
             <button
               onClick={() => setIsOpen(false)}
@@ -68,7 +68,9 @@ export default function SettingsSidebar() {
               </svg>
             </button>
           </div>
+        </div>
 
+        <div className="flex-1 overflow-y-auto custom-scrollbar p-8">
           <div className="space-y-10">
             {/* Arabic Font Selection */}
             <div>
@@ -136,7 +138,7 @@ export default function SettingsSidebar() {
               <label className="block text-sm font-bold text-[#8b7355] uppercase tracking-widest mb-4">
                 Translation
               </label>
-              <div className="grid grid-cols-1 gap-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar">
+              <div className="grid grid-cols-1 gap-2 pr-2">
                 {[
                   { id: "en.asad", label: "English (Asad)" },
                   { id: "bn.bengali", label: "Bengali (Official)" },
@@ -165,7 +167,7 @@ export default function SettingsSidebar() {
               <label className="block text-sm font-bold text-[#8b7355] uppercase tracking-widest mb-4">
                 Reciter
               </label>
-              <div className="grid grid-cols-1 gap-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar">
+              <div className="grid grid-cols-1 gap-2 pr-2">
                 {[
                   { id: "ar.alafasy", label: "Mishary Rashid Alafasy" },
                   { id: "ar.abdulsamad", label: "Abdul Basit Abdul Samad" },
